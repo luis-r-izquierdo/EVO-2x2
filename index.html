@@ -88,7 +88,7 @@
    <H2>OVERVIEW OF THE MODEL</H2>
    <p>EVO-2x2 is a computer simulation modelling framework designed to formally investigate the evolution of strategies in 2-player 2-strategy (2x2) symmetric games under various competing assumptions.</p>
 
-   <p>In EVO-2x2, there is a population of <i class="parameter">num-players</i> players. Events occur in discrete time-steps, which can be interpreted as successive generations. At the beginning of every generation every player’s payoff (which denotes the player’s fitness) is set to zero. Then, every player is paired with another player, according to some customisable procedure (<i class="parameter">pairing-settings</i>), to play a 2-player match.</p>
+   <p>In EVO-2x2, there is a population of <i class="parameter">num-players</i> players. Events occur in discrete time-steps, which can be interpreted as successive generations. At the beginning of every generation every player's payoff (which denotes the player's fitness) is set to zero. Then, every player is paired with another player, according to some customisable procedure (<i class="parameter">pairing-settings</i>), to play a 2-player match.</p>
 
    <p>Each match consists of a number of sequential rounds (<i class="parameter">rounds-per-match</i>). In each round, the two members of the pair play a symmetric 2x2 game once, where each of them can undertake one of two possible actions. These two possible actions are called cooperate (C) and defect (D). The action selected by each of the players determines the magnitude of the payoff that each of them receives in that round (<i class="parameter">CC-payoff</i>, <i class="parameter">CD-payoff</i>, <i class="parameter">DC-payoff</i>, <i class="parameter">DD-payoff</i>). The total payoff that a player obtains in a match is the sum of the payoffs obtained in each of the rounds.</p>
    <p>Players differ in the way they play the match, i.e. they generally have different strategies. The strategy of a player is determined by three numbers between 0 and 1:</p>
@@ -97,7 +97,7 @@
       <li><i>PC/C</i>: Probability to cooperate in round <i>n</i> (<i>n</i> > 1) given that the other player has cooperated in round <i>n</i> - 1.</li>
       <li><i>PC/D</i>: Probability to cooperate in round <i>n</i> (<i>n</i> > 1) given that the other player has defected in round <i>n</i> - 1.</li>
    </ul>
-   <p>Once every player has played one – and only one – match (except when the pairing mechanism is round robin, as explained below), two evolutionary forces (i.e. natural selection (<i class="parameter">selection-mechanism</i>) and mutation (<i class="parameter">mutation-rate</i>)) come into play to replace the old generation with a brand new one. Successful players (those with higher payoffs) tend to have more offspring than unsuccessful ones. This marks the end of a generation and the beginning of a new one, and thus the cycle is completed.</p>
+   <p>Once every player has played one &ndash; and only one &ndash; match (except when the pairing mechanism is round robin, as explained below), two evolutionary forces (i.e. natural selection (<i class="parameter">selection-mechanism</i>) and mutation (<i class="parameter">mutation-rate</i>)) come into play to replace the old generation with a brand new one. Successful players (those with higher payoffs) tend to have more offspring than unsuccessful ones. This marks the end of a generation and the beginning of a new one, and thus the cycle is completed.</p>
 
    <H2>PARAMETERS</H2> The value of every parameter in EVO-2x2 can be modified at run-time, with immediate effect on the model. This enables the user to closely interact with the model by observing the impact of changing various assumptions during the course of one single run.
 
@@ -126,7 +126,7 @@
    <p>This parameter (<i class="parameter">pairing-settings</i>) determines the algorithm that should be used to form pairs of players. There are three different options:</p>
    <ul>
       <li><i class="value">random pairings</i>: Pairs are made at random, without any bias. Every player plays one and only one match in a generation.</li>
-      <li><i class="value">round robin</i>: Every player is paired with every other player once, so every player plays exactly (<i class="parameter">num-players</i> – 1) matches per generation.</li>
+      <li><i class="value">round robin</i>: Every player is paired with every other player once, so every player plays exactly (<i class="parameter">num-players</i> &ndash; 1) matches per generation.</li>
       <li><i class="value">children together</i>: Players are paired preferably with their siblings (and at random among siblings). Once all the possible pairs between siblings have been made, the rest of the players are paired at random. Every player plays one and only one match in a generation.</li>
    </ul>
 
@@ -135,7 +135,7 @@
    <ul>
       <li><i class="value">roulette wheel</i>: This procedure involves conducting <i class="parameter">num-players</i> replications, which form the new generation. In each replication, players from the old generation are given a probability of being chosen to be replicated that is proportional to their total payoff (which denotes their fitness).</li>
       <li><i class="value">Moran process</i>: In each time-step (i.e. generation), one player is chosen for replication with a probability proportional to its fitness. The offspring replaces a randomly chosen player (possibly its parent). Payoffs are set to zero at the beginning of every time-step.</li>
-      <li><i class="value">winners take all</i>: This method selects the player(s) with the highest total payoff (i.e. the “winners”). Then, for <i class="parameter">num-players</i> times, a random player within this “winners set” is chosen to be replicated. The <i class="parameter">num-players</i> replications constitute the new generation.</li>
+      <li><i class="value">winners take all</i>: This method selects the player(s) with the highest total payoff (i.e. the "winners"). Then, for <i class="parameter">num-players</i> times, a random player within this "winners set" is chosen to be replicated. The <i class="parameter">num-players</i> replications constitute the new generation.</li>
       <li><i class="value">tournament</i>: This method involves selecting two agents from the population at random and replicating the one with the higher payoff for the next generation. In case of tie, one of them is selected at random. This process is repeated <i class="parameter">num-players</i> times. The <i class="parameter">num-players</i> replications form the new generation.</li>
    </ul>
    <p> <i class="parameter">mutation-rate</i>: This is the probability that any newly created player is a mutant. A mutant is a player whose strategy (the 3-tuple formed by <i>PC</i>, <i>PC/C</i>, and <i>PC/D</i>) has been determined at random.
