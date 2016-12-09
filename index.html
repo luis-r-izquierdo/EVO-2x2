@@ -72,6 +72,14 @@
          font-weight: bold
       }
    </STYLE>
+   <STYLE type="text/css">
+      img {
+         max-width: 100%;
+         height: auto;
+         width: auto\9;
+         /* ie8 */
+      }
+   </STYLE>
 
 </HEAD>
 
@@ -97,11 +105,12 @@
       <li><i>PC/C</i>: Probability to cooperate in round <i>n</i> (<i>n</i> > 1) given that the other player has cooperated in round <i>n</i> - 1.</li>
       <li><i>PC/D</i>: Probability to cooperate in round <i>n</i> (<i>n</i> > 1) given that the other player has defected in round <i>n</i> - 1.</li>
    </ul>
-   <p>Once every player has played one &ndash; and only one &ndash; match (except when the pairing mechanism is round robin, as explained below), two evolutionary forces (i.e. natural selection (<i class="parameter">selection-mechanism</i>) and mutation (<i class="parameter">mutation-rate</i>)) come into play to replace the old generation with a brand new one. Successful players (those with higher payoffs) tend to have more offspring than unsuccessful ones. This marks the end of a generation and the beginning of a new one, and thus the cycle is completed.</p>
+   <p>Once every player has played one &ndash;and only one&ndash; match (except when the pairing mechanism is round robin, as explained below), two evolutionary forces (i.e. natural selection (<i class="parameter">selection-mechanism</i>) and mutation (<i class="parameter">mutation-rate</i>)) come into play to replace the old generation with a brand new one. Successful players (those with higher payoffs) tend to have more offspring than unsuccessful ones. This marks the end of a generation and the beginning of a new one, and thus the cycle is completed.</p>
 
    <H2>PARAMETERS</H2>
    <p>The value of every parameter in EVO-2x2 can be modified at run-time, with immediate effect on the model. This enables the user to closely interact with the model by observing the impact of changing various assumptions during the course of one single run.</p>
 
+   <img style="margin:0px auto;display:block" src="./EVO-2x2.png" alt="timeline" />
 
    <h3>Population parameters</h3></p>
 
